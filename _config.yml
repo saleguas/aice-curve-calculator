@@ -39,3 +39,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
+
+webmaster_verifications:
+  google: kqJxzb9t_HUhN0cBU0f-MfiNeU9qKhVhva3JiR1WglY
+  bing: DF5DB3BF4C8A6EFC45ECB360D416F149
