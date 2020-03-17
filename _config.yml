@@ -1,0 +1,41 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+
+# Setup
+url:                 https://aleguas.dev
+baseurl:             ''
+paginate:            5
+
+# About/contact
+author:
+  name:              Salvador Aleguas
+  url:               https://aleguas.dev
+  email:             salvador@aleguas.dev
+
+# Custom vars
+version:             1.0.0
+
+
+# Jekyll SEO stuff
+
+title: Salvador Aleguas
+tagline: AICE Grade Threshold Curve Calculator
+email: salvador@aleguas.dev
+description: >- # this means to ignore newlines until next option:"
+  Calculator for the AICE examination mark thresholds. Calculates new threshold for each letter after changing the total marks.
+
+author: Salvador Aleguas
+logo: /img/logo_large.png
+social:
+  name: Salvador Aleguas
+  links:
+    - https://medium.com/@salvadoraleguas
+    - https://github.com/saleguas
+
+
+# Jekyll plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate

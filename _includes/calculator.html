@@ -1,0 +1,40 @@
+<table style="width:100%" id='homeTable'>
+  <tr>
+    <th colspan="6">Custom preset: <span id='options'></span></th>
+  </tr>
+  <tr>
+    <th>Max Marks</th>
+    <th>A</th>
+    <th>B</th>
+    <th>C</th>
+    <th>D</th>
+    <th>E</th>
+  </tr>
+  <tr id = 'markRow'>
+    {% for i in (1..6) %}
+    <td class='markCol'></td>
+    {% endfor %}
+  </tr>
+  <tr>
+    <th>New Marks</th>
+    <th>New A</th>
+    <th>New B</th>
+    <th>New C</th>
+    <th>New D</th>
+    <th>New E</th>
+  </tr>
+  <tr id ='curveRow'>
+    <td><input type="text" value="50" id='maxScale'></td>
+    {% for i in (1..5) %}
+    <td class ='scaleCol'></td>
+    {% endfor %}
+  </tr>
+  <tr>
+    <th colspan="6">Curve by: <span id='curvePercent'></span>%</th>
+  </tr>
+  <tr>
+    <th colspan="6">
+      <button type="button" name="button" id='downloadTable' onclick='createTable()'>Download Table</button>
+    </th>
+  </tr>
+</table>
