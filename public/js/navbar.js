@@ -6,9 +6,9 @@
   document.addEventListener('click', function(e) {
     var target = e.target;
 
-    if(!checkbox.checked ||
-       sidebar.contains(target) ||
-       (target === checkbox || target === toggle)) return;
+    if (!checkbox.checked ||
+      sidebar.contains(target) ||
+      (target === checkbox || target === toggle)) return;
 
     checkbox.checked = false;
   }, false);

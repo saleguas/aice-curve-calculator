@@ -6,7 +6,7 @@ class markRubric {
     this.marks = marks;
 
   }
-  calculateCurves(){
+  calculateCurves() {
     let maxMark = this.marks[0];
     let curves = [];
     for (let mark of this.marks.slice(1)) {
@@ -14,9 +14,9 @@ class markRubric {
     }
     this.curves = curves;
   }
-  getNewValues(maxMark){
+  getNewValues(maxMark) {
     let newMarks = [];
-    for(let curve of this.curves){
+    for (let curve of this.curves) {
       newMarks.push(Math.round(maxMark * curve));
     }
     return newMarks

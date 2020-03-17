@@ -23,7 +23,7 @@ function setupPage() {
   setupMarkInput();
   updateFields();
 
-  $('.markInput, #maxScale').on("input", function(){
+  $('.markInput, #maxScale').on("input", function() {
     updateFields();
   });
 
@@ -70,7 +70,7 @@ function setupMarkInput() {
 // Start dynamic grade updates
 // ////////////////////////////////////////////////////////////////////////
 
-function calculateNewCurves(){
+function calculateNewCurves() {
 
   let curves = []
 
@@ -89,14 +89,14 @@ function calculateNewCurves(){
   return tempRubric.getNewValues(newMax);
 }
 
-function setNewCurves(marks){
-  $('.scaleCol').each(function(index, value){
+function setNewCurves(marks) {
+  $('.scaleCol').each(function(index, value) {
 
     $(this).html(marks[index]);
   })
 }
 
-function updateFields(){
+function updateFields() {
   let newPoints = calculateNewCurves();
   setNewCurves(newPoints);
 
@@ -116,7 +116,7 @@ $('#options').change(function() {
   setupMarkInput();
   updateFields();
 
-  $('.markInput, #maxScale').on("input", function(){
+  $('.markInput, #maxScale').on("input", function() {
     updateFields();
   });
 
@@ -131,7 +131,7 @@ $('#options').change(function() {
 // ////////////////////////////////////////////////////////////////////////
 
 
-function createTable(){
+function createTable() {
 
   let fileName = window.prompt('Enter the name of the file', 'New_aice_curves')
   let rows = [
@@ -144,27 +144,29 @@ function createTable(){
 
   ]
 
-  $('#markRow input').each(function(index, value){
+  $('#markRow input').each(function(index, value) {
     rows[2].push($(this).val())
   });
 
   rows[4].push($('#curveRow input').val())
 
-  $('#curveRow td').each(function(index, value){
+  $('#curveRow th').each(function(index, value) {
     rows[4].push($(this).text());
   });
 
-  rows[4] = rows[4].filter(function (el) {
+  rows[4] = rows[4].filter(function(el) {
     return el != '';
   });
 
-  let csvTable = rows.map(function(d){
+  let csvTable = rows.map(function(d) {
     return d.join(',');
   }).join('\n');
 
   var pom = document.createElement('a');
-  var csvContent=csvTable; //here we load our csv data
-  var blob = new Blob([csvContent],{type: 'text/csv;charset=utf-8;'});
+  var csvContent = csvTable; //here we load our csv data
+  var blob = new Blob([csvContent], {
+    type: 'text/csv;charset=utf-8;'
+  });
   var url = URL.createObjectURL(blob);
   pom.href = url;
   pom.setAttribute('download', fileName + '.csv');
